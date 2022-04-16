@@ -6,13 +6,13 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                black: "#1C1E24",
+                black: "#010916",
                 highlight: "#0085FF",
-                gray: '#44464A'
+                gray: "#44464A",
             },
             fontFamily: {
-              'sans': ['Roboto','sans-serif']
-            }
+                sans: ["Montserrat", "sans-serif"],
+            },
         },
     },
     plugins: [],
