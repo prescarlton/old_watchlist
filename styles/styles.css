@@ -3,4 +3,5 @@
 /* default overrides */
 html,body,#__next {
     min-height:100%;
+    background-color: #010916;
 }

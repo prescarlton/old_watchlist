@@ -13,6 +13,9 @@ module.exports = {
             fontFamily: {
                 sans: ["Montserrat", "sans-serif"],
             },
+            boxShadow: {
+                top: '0px -40px 3px rgba(50, 50, 50, 0.75);'
+            }
         },
     },
     plugins: [],
