@@ -1,6 +1,5 @@
 import { FiSearch, FiX, FiUser } from "react-icons/fi";
 import { useState } from "react";
-import CardGrid from "./CardGrid";
 import SearchSection from "../atoms/SearchSection";
 const Navbar = () => {
     const [showFullScreen, setShowFullScreen] = useState(false);
