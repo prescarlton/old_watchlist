@@ -15,6 +15,9 @@ export const fetchTrending = (type = "all", timePeriod = "week") => {
 export const fetchMovieData = (id) => {
     return fetchMovieDB(`movie/${id}`);
 };
+export const fetchSeriesData = id => {
+    return fetchMovieDB(`tv/${id}`);
+}
 
 export const fetchMovieCreditsData = (id) => {
     return fetchMovieDB(`movie/${id}/credits`);

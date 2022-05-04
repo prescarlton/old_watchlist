@@ -12,7 +12,7 @@ const Carousel = ({ title, cards }) => {
                     // generate the poseter path for the card
                     const fullPosterPath = `https://image.tmdb.org/t/p/original${card.poster_path}`;
                     // figure out what the type of media is
-                    const mediaType = card.title ? 'movie' : 'tv';
+                    const mediaType = card.title ? 'movie' : 'series';
                     return (
                         <Link href={`/${mediaType}/${card.id}`}>
                             <div

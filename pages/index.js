@@ -4,7 +4,7 @@ import { fetchTrending } from "../util/api";
 
 export default function Home({ trendingAll, trendingMovies, trendingTv }) {
     return (
-        <div className="home w-screen overflow-x-hidden p-6">
+        <div className="home w-screen overflow-x-hidden p-6 mt-12">
             <HeaderCarousel cards={trendingAll} />
             <Carousel 
                 title='Trending Movies'

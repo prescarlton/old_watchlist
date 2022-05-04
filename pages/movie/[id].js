@@ -1,4 +1,5 @@
 import moment from "moment";
+import TabDisplay from "../../components/molecues/TabDisplay";
 import { fetchMovieCreditsData, fetchMovieData } from "../../util/api";
 
 export default function MoviePage({ movieData, castData }) {
@@ -28,7 +29,11 @@ export default function MoviePage({ movieData, castData }) {
                             <h2 className="">{movieData.vote_average}</h2>
                         </div>
                         <div className="flex gap-x-4">
-                            {movieData.video && (<h2 className="rounded-md bg-slate-400 px-3">trailer</h2>)}
+                            {movieData.video && (
+                                <h2 className="rounded-md bg-slate-400 px-3">
+                                    trailer
+                                </h2>
+                            )}
                             <h2 className="">{movieData.runtime} min</h2>
                         </div>
                     </div>
@@ -39,30 +44,46 @@ export default function MoviePage({ movieData, castData }) {
             </div>
             <div className="moviePageContent p-6">
                 <div className="section my-4">
-                    <h1 className="font-bold uppercase mb-1">{movieData.tagline}</h1>
+                    <h1 className="font-bold uppercase mb-1">
+                        {movieData.tagline}
+                    </h1>
                     <p>{movieData.overview}</p>
                 </div>
                 <div className="section my-4">
                     <h1 className="font-bold uppercase mb-1">Where to Watch</h1>
                     <p>Coming Soon!</p>
                 </div>
-                {/* TODO: MAKE THIS TABBED */}
-                <div className="section my-4">
-                    <h1 className="font-bold uppercase mb-1">Cast</h1>
-
-                </div>
-                <div className="section my-4">
-                    <h1 className="font-bold uppercase mb-1">Cast</h1>
-                    {castData.map(castMember => {
-                        return <h2>{castMember.name}</h2>
-                    })}
-                </div>
-                <div className="section my-4">
-                    <h1 className="font-bold uppercase mb-1">Details</h1>
-                </div>
-                <div className="section my-4">
-                    <h1 className="font-bold uppercase mb-1">Genres</h1>
-                </div>
+                <TabDisplay>
+                    <div title="Cast">
+                        <h2>Cast - Coming Soon</h2>
+                    </div>
+                    <div title="Crew">
+                        <h2>Crew - coming soon</h2>
+                    </div>
+                    <div title="Details">
+                        <h2>details - coming soon</h2>
+                    </div>
+                    <div title="Genres">
+                        <h2>genres - coming soon</h2>
+                    </div>
+                </TabDisplay>
+                {/* <div className="tabs">
+                    <div className="section my-4">
+                        <h1 className="font-bold uppercase mb-1">Cast</h1>
+                    </div>
+                    <div className="section my-4">
+                        <h1 className="font-bold uppercase mb-1">Cast</h1>
+                        {castData.map((castMember) => {
+                            return <h2>{castMember.name}</h2>;
+                        })}
+                    </div>
+                    <div className="section my-4">
+                        <h1 className="font-bold uppercase mb-1">Details</h1>
+                    </div>
+                    <div className="section my-4">
+                        <h1 className="font-bold uppercase mb-1">Genres</h1>
+                    </div>
+                </div> */}
             </div>
         </div>
     );
@@ -76,7 +97,7 @@ export async function getServerSideProps(ctx) {
         props: {
             movieData,
             castData: creditsData.cast,
-            crewData: creditsData.crew
+            crewData: creditsData.crew,
         },
     };
 }

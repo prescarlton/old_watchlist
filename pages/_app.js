@@ -3,9 +3,9 @@ import "tailwindcss/tailwind.css";
 import Navbar from "../components/molecues/Navbar";
 function MyApp({ Component, pageProps }) {
     return (
-        <div className="app h-full bg-black text-white flex flex-col">
+        <div className="app h-full bg-black text-white flex flex-col overflow-hidden">
             <Navbar />
-            <div className="mt-12">
+            <div className="overflow-y-auto">
                 <Component {...pageProps} />
             </div>
         </div>
